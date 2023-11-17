@@ -1,0 +1,71 @@
+
+<!doctype html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		{% if useanothercss %}
+		<link href="../../../static/wasabicalendar/base.css" rel="stylesheet" type="text/css">
+		<script src="../../../static/wasabicalendar/wasabicalendar.js"></script>
+		{% else %}
+		<link href="../../static/wasabicalendar/base.css" rel="stylesheet" type="text/css">
+		<script src="../../static/wasabicalendar/wasabicalendar.js"></script>
+	    {% endif %}	
+		<title> {% block title %} Web Calendar {% endblock %} </title>
+		<link rel="icon" type="image/x-icon" href="../../static/wasabicalendar/Wasabi-Calendar.ico">
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+        		$("#calendar_container").flip({
+            	trigger:'manual',
+            	axis:'y',
+				speed:500,
+        		})
+    		})
+		</script>
+	</head>
+
+	<body>
+		{% if useanothercss %}
+		<img src="../../../static/wasabicalendar/background.jpg" class="bg">
+		{% else %}
+		<img src="../../static/wasabicalendar/background.jpg" class="bg">
+		{% endif %}
+		<div class="heading-parent">
+			<div class="big-heading" id="id_header_div">
+				{% if useanothercss %}
+				<img src="../../../static/wasabicalendar/Wasabi Calendar.png" class="logo">
+				{% else %}
+				<img src="../../static/wasabicalendar/Wasabi Calendar.png" class="logo">
+				{% endif %}
+				<span class="title" id="id_site_name">Wasabi Calendar</span>
+				<div class='dropdown'>
+					<button type="button" id="id_nav_profile" class="button-54">
+						{{user.first_name}} {{user.last_name}}
+					</button>
+					<div class='dropdown-content'>
+						<div class="un">Username: {{user.username}}</div>
+						<a href="{% url 'logout' %}" id='id_nav_logout'>
+							Logout
+						</a>
+					</div>
+				</div>
+				<script type="text/javascript">
+					document.getElementById("id_nav_profile").onclick = function() {
+						location.href = "{% url 'profile' %}";
+					};
+				</script>
+			</div>
+		</div>
+		<div class="message" id="id_message_msg">
+			{{message}}
+		</div>
+	    <div class="content">
+		    {% block content %}
+		    {% endblock %}
+		</div>
+		<div class='copyright'>
+			Copyright &#169;2022 Wabisabi
+		</div>
+	</body>
+</html>

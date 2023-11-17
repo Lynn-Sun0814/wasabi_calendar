@@ -1,0 +1,93 @@
+{% extends "wasabicalendar/base.html" %}
+
+{% block content %}
+<div class="cal_container" id="view_cal">
+    <input type="hidden" id="cal_id" value="{{id}}">
+    <input type="hidden" id="week_info" value="{{week_info}}">
+    <div class="invite_tag" id="id_invite_tag">
+        <div class="create_task">
+            <form action="{% url 'new_task' id %}" class="box" method="GET">
+                <button id="id_new_task" name="button" type="submit" class='create_task_btn'>
+                    Create Task
+                </button>
+            </form>   
+        </div>
+        <div class='block'>
+            <div class="owner_heading">
+                <span>{{calendar.name}}</span>
+            </div>
+            <form action="{% url 'member' id %}" method="POST">
+                <span class="invite_heading"> Invite </span> 
+                <div class="members">
+                    <ul class="heading">
+                        {% for m in calendar.members.all %}
+                        <li>{{m.first_name}} {{m.last_name}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <input id="id_invite_member" type="text" name="text" class='invite_form' placeholder='Search Member'>
+                <button id="id_invite_button" name="button" type="submit" class='add_btn'>
+                    Add
+                </button>
+                {% csrf_token %}
+            </form>
+        </div>
+        <div class='placeholder'>
+
+        </div>
+        <div class='block'>
+            <form action="{% url 'tag' id %}" method="POST">
+                <span class="invite_heading"> Tags </span>
+                <div class="tags">
+                    <ul class='heading' id="my_tags_go_here">
+                    </ul>
+                </div>
+                <input id="id_add_tag" type="text" name="text" class='invite_form' placeholder='New Tag'>
+                <button id="id_tag_button" name="button" type="submit" class='add_btn'>
+                    Add
+                </button>
+                {% csrf_token %}
+            </form>
+        </div>  
+    </div>
+
+    <div class="calendar_side" id="calendar_side">
+        <div class="calendar_container" id="calendar_container">
+            <div class="front" id="front_calendar">
+                <div class="cal_head">
+                    <button class="previous arrow" onclick="left_click()">&#8249;</button>
+                    <button class="next arrow" onclick="right_click()">&#8250;</button>
+                </div>
+                <div class="wkdays" id="current_week">
+                    <div class="wkday_name">time</div>
+                    <div class="wkday_name" id="wkday_0"></div>
+                    <div class="wkday_name" id="wkday_1"></div>
+                    <div class="wkday_name" id="wkday_2"></div>
+                    <div class="wkday_name" id="wkday_3"></div>
+                    <div class="wkday_name" id="wkday_4"></div>
+                    <div class="wkday_name" id="wkday_5"></div>
+                    <div class="wkday_name" id="wkday_6"></div>
+                </div>
+                <div class="front_content">
+                    <div id="front_content"></div>
+                </div>
+            </div>
+            <div class="back" id="back_calendar" onclick="flip_back()">
+            </div>
+        </div>
+        <div class='print_page'>
+            <button id="id_print_button" type="button" class='button-4' onclick="print_page()">
+                Print
+            </button>
+        </div>
+    </div>
+    
+</div>
+
+    <script>
+    console.log("load page in html")
+    loadPage()
+    window.setInterval("loadPage()", 1000)
+    </script>
+
+{% endblock %}

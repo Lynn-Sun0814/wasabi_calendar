@@ -1,0 +1,36 @@
+{% extends "wasabicalendar/base.html" %}
+
+{% block content %}
+    <div class = "createTask">
+        <div class = "page_name" id="id_page_name"> View Task </div>
+        {% if createmessage %}
+        <div class="message">
+            {{createmessage}}
+        </div>
+        {% endif %}
+        <form method="POST" action="{% url 'modify_helper' task.id %}" class="new_task">
+            <table>
+                {{form}}
+            </table>
+            {% csrf_token %}
+            <div style="margin: 0 auto; text-align:center;" class="two_btns">
+                <button class='task_btn' type="button" id="id_nav_back"> Back </button>
+                <button class="task_btn" type="submit" id="id_register_button">Submit</button>
+                <button class='task_btn' type="button" id="id_delete_button"> Delete </button>
+            </div>
+            <input type="hidden" name="hidden_update_time_modify" value="{{update_time}}">
+        </form>
+        <form method="POST" id="delete_form" action="{% url 'delete_helper' task.id %}" class="hiddenform">
+            <input type="hidden" name="hidden_update_time_delete" value="{{update_time}}">
+            {% csrf_token %}
+        </form>
+        <script type="text/javascript">
+            document.getElementById("id_nav_back").onclick = function() {
+                location.href = "{% url 'back' task.calendar.id %}";
+            };
+            document.getElementById("id_delete_button").onclick = function() {
+                document.getElementById("delete_form").submit();
+            };
+        </script>
+    </div>
+{% endblock %}

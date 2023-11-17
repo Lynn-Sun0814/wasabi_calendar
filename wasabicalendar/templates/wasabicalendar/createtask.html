@@ -1,0 +1,29 @@
+{% extends "wasabicalendar/base.html" %}
+
+
+{% block content %}
+    <div class = "createTask">
+        <div class = "page_name" id="id_page_name"> Create Task </div>
+	    {% if createmessage %}
+        <div class="message">
+            {{createmessage}}
+        </div>
+        {% endif %}
+        <form method="POST" action="{% url 'create_task' calendar.id %}"  class="new_task">
+            <table class='form_text'>
+                {{form}}
+            </table>
+            {% csrf_token %}
+            <div style="margin: 0 auto; text-align:center;" class="two_btns">
+                <button class='task_btn' type="button" id="id_nav_back"> Back </button>
+                <button class="task_btn" type="submit" id="id_register_button">Submit</button>
+            </div>
+        </form>
+        
+        <script type="text/javascript">
+            document.getElementById("id_nav_back").onclick = function() {
+                location.href = "{% url 'back' calendar.id %}";
+            };
+        </script>
+    </div>
+{% endblock %}

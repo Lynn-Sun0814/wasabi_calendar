@@ -1,0 +1,61 @@
+{% extends "wasabicalendar/base.html" %}
+
+{% block content %}
+    <div class="create_cal_parent">
+        <div class="create_cal">
+            <form action="{% url 'create_calendar' %}" method="POST">
+                <input id="id_new_calendar" class="create_cal_form" name="text" type="text" placeholder="Enter Calendar Name">
+                <button id="id_create_calendar_button" class="create_cal_btn" 
+                        type="submit">Create Calendar</button>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+    <div class="cal_page_container">
+        <div class = "error"> {{ request.session.message }} </div>
+        <div class="calendars" id="my-calendars-go-here">
+            <p class="subtitle">My Calendars</p>
+            <div class="my-cals">
+                {% for c in user.owned_calendar.all %}
+                <button type="button" id="id_calendar_{{c.id}}" class="calendar-button">
+                    <div class='logo_img'>
+                        <img class="icon" src="../../static/wasabicalendar/Wasabi Calendar.png">
+                    </div>
+                    <div class='cal_name'>
+                        {{c.name}}
+                    </div>
+                </button>
+                <script type="text/javascript">
+                    document.getElementById("id_calendar_{{c.id}}").onclick = function() {
+                        location.href = "{% url 'get_calendar' c.id %}";
+                    };
+                </script>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="calendars" id="shared-calendars-go-here">
+            <p class="subtitle">Shared with Me</p>
+            <div class="my-cals">
+                {% for c in user.shared_calendar.all %}
+                <button type="button" id="id_calendar_{{c.id}}" class="calendar-button">
+                    <div>
+                        <img class="icon" src="../../static/wasabicalendar/Wasabi Calendar.png">
+                    </div>
+                    <div>
+                        {{c.name}} 
+                    </div>
+                    <div class='owner_info'>from {{c.owner.first_name}} {{c.owner.last_name}}</div>
+                </button>
+                <script type="text/javascript">
+                    document.getElementById("id_calendar_{{c.id}}").onclick = function() {
+                        location.href = "{% url 'get_calendar' c.id %}";
+                    };
+                </script>
+                {% endfor %}
+            </div>    
+        </div>
+    </div>
+{% endblock %}
+
+

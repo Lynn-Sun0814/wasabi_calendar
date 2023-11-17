@@ -1,0 +1,1058 @@
+body {
+    margin: 0;
+}
+
+.bg {
+    background-size:cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    filter: grayscale(50%);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+
+.heading-parent {
+    width:100vw;
+}
+
+.heading-parent .big-heading {
+    margin-top: 1vw;
+    background-color: rgb(75, 91, 27);
+    height: 12vh;
+    padding: 1.8vh 2.5vh;
+    position:fixed;
+    width:100vw;
+    box-shadow: 0 0 4px 6px rgba(0, 0, 0, 0.2), 0 4px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+.error {
+    color: red;
+    font-size: large;
+    margin-left:100px;
+}
+
+.title {
+    font-size: 5vw;
+    text-align: left;
+    font-family: 'sharilla';
+    color: white;
+    width:30vw;
+    height:13.5vh;
+    padding-left: 1vw;
+    top:2.5vh;
+    position:fixed;
+}
+
+.content {
+    width: 100vw;
+    height: 80vh;
+}
+
+.message {
+    color:rgb(216, 243, 120);
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    font-family: "Georgia";
+    padding: 25px 50px;
+    position:fixed;
+    top:10vh;
+    left:40vw;
+    z-index: 1;
+}
+
+a {
+    font-family: sans-serif;
+    color: white;
+    font-size: medium;
+    text-decoration: none;
+}
+
+ul {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+li {
+    text-align: left;
+    color: rgb(27, 116, 1);
+    font-family: "Georgia";
+}
+
+.page_name {
+    margin-top:18vh;
+    text-align: center;
+    width: 500px;
+    margin-top:18vh;
+    font-family: "Georgia";
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    position:fixed;
+}
+
+input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table {
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 500px;
+    height: 350px;
+}
+.cal_page_container{
+    height:65vh;
+    width:100vw;
+    display: flex;
+    flex-direction:row;
+    padding-top: 30vh;
+}
+
+.cal_container{
+    height:65vh;
+    width:100vw;
+    display: flex;
+    flex-direction:row;
+    padding-top:20vh;
+    padding-left:3.5vw;
+}
+
+.invite_tag{
+    width:10%;
+    padding-right:5%;
+    font-size:medium;
+    z-index: 1;
+    
+}
+
+.calendar_container{
+    width:90%;
+    padding-right:3vw;
+    height:95%;
+}
+
+.hour {
+    outline: rgb(255,255,255,1);
+    outline-width: 0.1em;
+    border-width: 0em;
+    outline-style:solid;
+    text-align: center;
+    font-size:xx-large;
+    font-family:Georgia;
+}
+
+.cell_0 {
+    background: rgb(1,1,1,.5);
+    z-index: 1;
+    width:600%;
+    height:100%;
+}
+
+.cell_1 {
+    z-index: 1;
+    width:600%;
+    height:100%;
+    background-color: #e5ffcc;
+    border-style:hidden;
+    opacity:0.5;
+}
+
+.cell_2 {
+    z-index: 1;
+    width:600%;
+    height:100%;
+    background-color: #B2FF66;
+    border-style:hidden;
+    opacity:0.5;
+}
+
+.cell_3 {
+    z-index: 1;
+    width:600%;
+    height:100%;
+    background-color: #66CC00;
+    border-style:hidden;
+    opacity:0.5;
+}
+
+.cell_4 {
+    z-index: 1;
+    width:600%;
+    height:100%;
+    background-color: #4C9900;
+    border-style:hidden;
+    opacity:0.5;
+}
+
+.cell_5 {
+    z-index: 1;
+    width:600%;
+    height:100%;
+    background-color: #006600;
+    border-style:hidden;
+    opacity:0.5;
+}
+
+.week {
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-rows: repeat(24, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    height: 192vh;
+    width: 100%;
+}
+    
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    height: 2vh;
+}
+
+
+.task_0 {
+    position: relative;
+    left: -100%;
+    z-index: 2;
+    width:500%;
+    height:100%;
+    border-color:#959DA5;
+}
+
+.task_1 {
+    position: relative;
+    left: -100%;
+    z-index: 3;
+    width:400%;
+    height:100%;
+    border-color:#959DA5;
+}
+    
+.task_2 {
+    position: relative;
+    left: -100%;
+    z-index: 4;
+    width:300%;
+    height:100%;
+    border-color:#959DA5;
+}
+    
+.task_3 {
+    position: relative;
+    left: -100%;
+    z-index: 5;
+    width:200%;
+    height:100%;
+    border-color:#959DA5;
+}
+    
+.task_4 {
+    position: relative;
+    left: -100%;
+    z-index: 6;
+    width:100%;
+    height:100%;
+    border-color:#959DA5;
+}
+
+.grid > div {
+    font-size: small;
+    color: white;
+    border-style:solid;
+    border-width:thin;
+    border-radius:5vw;
+    overflow:hidden;
+    height:100%;
+}
+
+.grid > button {
+   font-size: 0.8em;
+   color: rgba(0, 0, 0, 0.6);
+   border-style:solid;
+   border-width:thin;
+   border-radius:0.5vw;
+   overflow:hidden;
+   height:100%;
+   font-family:"honey_waffle";
+   overflow-wrap: break-all;
+   text-overflow: ellipsis;
+   font-weight:bold;
+}
+
+.view_button {
+    font-size:xx-large;
+    font-family:"Georgia";
+    background-color:rgb(57, 68, 25);;
+    border-radius: 10px;
+    border: 0.3em double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 20px;
+    padding: 14px;
+    width: 15vw;
+    margin: auto;
+    position: relative;
+    margin-top: 4vw;
+}
+
+.calendars{
+    padding-left: 5vw;
+    padding-right: 5vw;
+    position: relative;
+    width:50%;
+}
+
+.topic {
+    font-size:xx-large;
+    width:100%;
+    height:50%;
+    background-color:crimson;
+}
+
+.name {
+    font-family: "Georgia";
+    margin-top:2.5vw;
+    margin-right:4vw;
+    z-index:1;
+}
+
+.dropdown {
+    display:inline-block;
+    position:relative;
+    top: -5.5vw;
+    margin-left: 75vw;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 0.5vw;
+    text-decoration: none;
+    background-color: #fff;
+    font-family: "Georgia";
+    text-align:center;
+    font-size: 1vw;
+}
+
+.dropdown-content .un {
+    display: block;
+    color: #000000;
+    padding: 0.5vw;
+    text-decoration: none;
+    background-color: #fff;
+    font-family: "Georgia";
+    text-align:center;
+    font-size: 1vw;
+}
+
+.dropdown-content a:hover {
+    display: block;
+    color: #FFFFFF;
+    background-color: #a2ce76;
+}
+
+.dropdown-content .un:hover {
+    display: block;
+}
+
+
+.logout {
+    
+    position:relative;
+    right: 1vw;
+    top: -2.5vw;
+}
+
+.box {
+    width: 12vw;
+}
+
+
+.block {
+    background-color:rgba(0, 0, 0, 0.12);
+    z-index: 1;
+    width:14vw;
+    text-align:center;
+    height: 30vh;
+    padding-top: 2vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.front {
+    width:100%;    
+}
+
+.front_content {
+    overflow-y:scroll;
+    height:95%;
+}
+
+.back {
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    overflow-y:hidden;
+}
+
+.createTask {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding: 2.5vh 5vw;
+    position: relative;
+}
+
+/* button */
+.create_cal {
+    z-index: 1;
+    margin-top:1vh;
+}
+
+.create_cal_btn {
+    display: inline-block;
+    font-family: "Georgia";
+    background-color:rgb(57, 68, 25);
+    border-radius: 10px;
+    border: 0.3vw double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 1.5vw;
+    padding: 1.2vw;
+    width: 15vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin:1vw;
+  }
+.create_cal_btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+.create_cal_btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -2vw;
+    transition: 0.5s;
+  }
+  .create_cal_btn:hover {
+    color:#cccccc;
+    background-color: #daffc8;
+  }
+  .create_cal_btn:hover span {
+    padding-right: 2.5vw;
+  }
+  .create_cal_btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+/* form */
+.create_cal_form { 
+    width: 20vw;
+    background: #fff;
+    color: #5e5c5c;
+    font-family: "Georgia";
+    font-size: 1.5vw;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+    border: 0;
+    outline: 0;
+    padding: 1.3vw 1.3vw;
+}
+
+.invite_form { 
+    width: 10vw;
+    background:#fff;
+    color: #5e5c5c;
+    font-family: "Georgia";
+    font-size: 1vw;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+    border: 0;
+    outline: 0;
+    padding: 0.6vw;
+    text-align:center;
+    size: "50";
+    margin-top:0.5vh;
+    margin-bottom:0.5vh;
+}
+
+.create_cal_parent {
+    top: 15.5vw;
+    width:100vw;
+}
+
+.create_cal_parent .create_cal{
+    top: 155px;
+    text-align: center;
+    position:fixed;
+    width:100vw;
+}
+
+.subtitle {
+    font-family: "Georgia";
+    font-size: 1.8vw;
+    font-weight: 900;
+    color: black;
+} 
+
+@font-face {
+    font-family: 'sharilla';
+    src: url('../../static/wasabicalendar/Sharilla.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'honey_waffle';
+    src: url('../../static/wasabicalendar/honeywaffles.ttf') format('truetype');
+}
+
+.heading {
+    font-family: "Georgia";
+    font-size:1vw;
+
+}
+
+.owner_heading {
+    font-family: "Georgia";
+    font-weight:bold;
+    margin-bottom: 1vw;
+    font-size:1.2vw;
+}
+
+.two_btns {
+    text-align: center;
+    display:flex;
+    position: fixed;
+    bottom: 10vh;
+    left:50%;
+    -ms-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+
+}
+
+.task_btn {
+    display: inline-block;
+    font-family: "Georgia";
+    background-color: rgb(57, 68, 25);
+    border-radius: 10px;
+    border: 0.3vw double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 1.2vw;
+    padding: 1.2vw;
+    width: 10vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+.task_btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+.task_btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .task_btn:hover {
+    color:#cccccc;
+    background-color: #daffc8;
+  }
+  .task_btn:hover span {
+    padding-right: 25px;
+  }
+  .task_btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.task_form{
+    width: 360px;
+    background: #fff;
+    color: #5e5c5c;
+    font-family: "Georgia";
+    font-size: 15px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+    border: 0;
+    outline: 0;
+    padding: 22px 18px;
+}
+
+.new_task{
+    margin-top:22vh;
+    height:50vh;
+    position:fixed;
+    overflow-y: auto;
+    
+}
+
+.form_content {
+    top: 150px;
+    height: 60vh;
+}
+
+.calendar_side{
+    width:90%;
+    display:flex;
+    flex-direction:column;
+}
+
+  
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+    width:1.5vw;
+    height:3vh;
+    font-size:1vw;
+    margin-right:auto;
+}
+  
+.next {
+    background-color: #04AA6D;
+    color: white;
+    width:1.5vw;
+    height:3vh;
+    font-size:1vw;
+    margin-left:auto;
+}
+  
+.arrow {
+    display:inline-block;
+    border-radius: 50%;
+    z-index:1;
+    margin-bottom:2vh;
+    text-align:center;
+}
+
+.arrow:hover {
+    background-color:#cccccc;
+    margin-bottom:2vh;
+    text-align:center;
+    display:inline-block;
+    z-index:1;
+}
+
+.cal_head {
+    width:100%;
+    height:7%;
+    display:flex;
+    flex-direction:row;
+}
+
+.choice_form{
+    width: 400px;
+    background: #fff;
+    color: #5e5c5c;
+    font-family: "Georgia";
+    font-size: 18px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+    border: 0;
+    outline: 0;
+    padding: 18px 18px;
+    border-radius: 15px;
+    margin-top:8px;
+    margin-bottom: 15px;
+  }
+
+.time_form{
+    width: 360px;
+    background: #fff;
+    color: #5e5c5c;
+    font-family: "Georgia";
+    font-size: 18px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+    border: 0;
+    outline: 0;
+    padding: 18px 18px;
+    border-radius: 15px;
+    margin-bottom: 8px;
+}
+
+.hiddenform {
+    height:1px;
+    visibility:hidden;
+}
+
+.wkdays {
+    display: flex;
+}
+
+.wkday_name {
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center;
+    font-family: 'honey_waffle';
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.add_btn {
+    display: inline-block;
+    font-family: "Georgia";
+    background-color: rgb(57, 68, 25);
+    border-radius: 0.5vw;
+    border: 0.2vw double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 1vw;
+    padding: 0.7vw;
+    width: 7vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0.3vw;
+    margin-left:0.5vw;
+    margin-top:0.3vh;
+    margin-bottom:0.2vh;
+  }
+.add_btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+.add_btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -2vw;
+    transition: 0.5s;
+  }
+  .add_btn:hover {
+    color:#cccccc;
+    background-color: #daffc8;
+  }
+  .add_btn:hover span {
+    padding-right: 2.5vw;
+  }
+  .add_btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.invite_heading {
+    font-family:'honey_waffle';
+    font-weight: bold;
+    text-decoration:underline;
+    font-size:2vw;
+}
+
+
+
+.create_task_btn {
+    display: inline-block;
+    font-family: 'honey_waffle';
+    font-weight:400;
+    background-color: rgb(129, 153, 57);
+    border-radius: 1.5vw;
+    border: 0.3vw double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 1.5vw;
+    padding: 1vw;
+    width: 10vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0.3vw;
+    margin-left:1.5vw;
+    margin-bottom:2vh;
+  }
+  .create_task_btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+.create_task_btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .create_task_btn:hover {
+    color:#cccccc;
+    background-color: #daffc8;
+  }
+  .create_task_btn:hover span {
+    padding-right: 25px;
+  }
+  .create_task_btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.create_task {
+    margin-bottom:1vh;
+}
+
+.logo {
+    width:10vw;
+    height:13.5vh;
+}
+
+
+.button-54 {
+  font-family: "Georgia", sans-serif;
+  font-size: 1.1vw;
+  letter-spacing: 0.12vw;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 0.2vw solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  background-color: #fff;
+  top:-1.5vh;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: -1vh;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+ 
+.print_page {
+    position:fixed;
+    bottom: 4vh;
+    right:4vw;
+    width:5vw;
+    height:5vh;
+}
+
+
+/* CSS */
+.button-4 {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.button-4:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.button-4:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+.button-4:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.button-4:focus {
+  outline: 1px transparent;
+}
+
+.button-4:before {
+  display: none;
+}
+
+.button-4:-webkit-details-marker {
+  display: none;
+}
+
+.placeholder {
+    height: 3vh;
+}
+
+.tags {
+    overflow-y: scroll;
+    height:8.5vh;
+    margin-left:10%;
+    margin-right:10%;
+    text-align:center;
+}
+
+.members {
+    overflow-y: scroll;
+    height:6vh;
+    margin-left:10%;
+    margin-right:10%;
+    text-align:center;
+}
+
+.back_wrapper {
+    width: 50%;
+    height: 90%;
+    background-color:rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin: auto;
+    overflow-y: auto;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+
+.info_0 {
+    position: relative;
+    padding-top: 5%;
+    font-family: Georgia;
+    font-size: 2vw;
+    padding-bottom: 2%;
+    color: #FFFFFF;
+}
+.info_1 {
+    font-family: Georgia;
+    font-size: 2vw;
+    padding-bottom: 2%;
+    color: #FFFFFF;
+    overflow-wrap: break-word;
+}
+.info_2 {
+    font-family: Georgia;
+    font-size: 2vw;
+    padding-bottom: 2%;
+    color: #FFFFFF;
+    overflow-wrap:break-all;
+    text-overflow: ellipsis;
+}
+.info_3 {
+    font-family: Georgia;
+    font-size: 2vw;
+    padding-bottom: 2%;
+    color: #FFFFFF;
+}
+.info_4 {
+    font-family: Georgia;
+    font-size: 2vw;
+    padding-bottom: 2%;
+    color: #FFFFFF;
+}
+
+.info_5 {
+    text-align: center;
+    font-family: Georgia;
+    font-size: 2vw;
+    position: relative;
+    margin-top: 4vw;
+    padding-bottom: 4vw;
+}
+
+.calendar-button {
+    font-family: "Georgia", sans-serif;
+    font-size: 1vw;
+    letter-spacing: 0.01vw;
+    text-decoration: none;
+    color: #000;
+    background-color:#fff;
+    cursor: pointer;
+    border: 0.2vw solid;
+    padding: 0.5em 1em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width:11vw;
+    height:15vh;
+    text-align:center;
+  }
+
+  .icon {
+      width:5vw;
+      height:4vw;
+  }
+  
+  .calendar-button:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-54 {
+      padding: 0.25em 0.75em;
+    }
+  }
+
+  .my-cals {
+      padding-left:2.8vw;
+      height:55vh;
+      overflow-y: auto;
+  }
+.print{
+    overflow: visible;
+    width: 100%;
+}
+
+.owner_info {
+    margin-left:-1vw;
+    width:11vw;
+    text-align:center;
+}
+
+.copyright {
+    font-size: 1vw;
+    font-family: "Serif";
+    color: rgb(57, 68, 25);
+    z-index: 1;
+    position:fixed;
+    top:95vh;
+    left:45vw;
+
+}
